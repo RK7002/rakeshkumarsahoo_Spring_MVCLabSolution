@@ -3,18 +3,16 @@ package com.greatlearning.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.greatlearning.dao.StudentDAO;
 import com.greatlearning.entity.Student;
 
+@Service
 public class StudentServiceImplementation implements StudentService{
 	
-	private StudentDAO studentDAO;
-	
 	@Autowired
-	public StudentServiceImplementation(StudentDAO studentDAO) {
-		this.studentDAO=studentDAO;
-	}
+	private StudentDAO studentDAO;
 	
 	@Override
 	public List<Student> findAll() {

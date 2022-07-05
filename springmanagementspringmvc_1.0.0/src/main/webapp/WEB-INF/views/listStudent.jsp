@@ -18,38 +18,43 @@
 	</head>
 	<body>
 		<div class="container">
+			<hr>
+			<center>
+				<h2>GreatLearning Academy</h2>
+			</center>
+			<hr>
 			<h3>Students Directory</h3>
 			<hr>
-				<form action="/SpringMVCStudentMgntApplication/books/search"
+				<form action="/springmanagementspringmvc_1.0.0/student/list"
 				class="form-inline">
 	
-				<a href="/SpringMVCStudentMgntApplication/student/showFormForAdd"
+				<a href="/springmanagementspringmvc_1.0.0/student/showFormForAdd"
 					class="btn btn-primary btn-sm mb-3"> Add Student </a>
 				</form>
 	
 				<table class="table table-bordered table-striped">
 					<thead class="thead-dark">
 						<tr>
-							<th>FirstName</th>
-							<th>LastName</th>
-							<th>Course</th>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Department</th>
 							<th>Country</th>
-							<th>Action</th>
+							<th>Edit</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${students}" var="tempStudent">
+						<c:forEach items="${Students}" var="tempStudent">
 							<tr>
-								<td><c:out value="${tempStudent.firstName}" /></td>
-								<td><c:out value="${tempStudent.lastName}" /></td>
-								<td><c:out value="${tempStudent.course}" /></td>
+								<td><c:out value="${tempStudent.id}" /></td>
+								<td><c:out value="${tempStudent.name}" /></td>
+								<td><c:out value="${tempStudent.department}" /></td>
 								<td><c:out value="${tempStudent.country}" /></td>
 								<td>
 									<!-- Add "update" button/link --> <a
-									href="/SpringMVCStudentMgntApplication/student/showFormForUpdate?id=${tempStudent.id}"
+									href="/springmanagementspringmvc_1.0.0/student/showFormForUpdate?id=${tempStudent.id}"
 									class="btn btn-info btn-sm"> Update </a> <!-- Add "delete" button/link -->
 									<a
-									href="/SpringMVCStudentMgntApplication/student/delete?id=${tempStudent.id}"
+									href="/springmanagementspringmvc_1.0.0/student/delete?id=${tempStudent.id}"
 									class="btn btn-danger btn-sm"
 									onclick="if (!(confirm('Are you sure you want to delete this Student?'))) return false">
 										Delete </a>

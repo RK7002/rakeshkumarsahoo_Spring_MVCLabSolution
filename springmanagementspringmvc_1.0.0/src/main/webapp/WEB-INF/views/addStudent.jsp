@@ -15,33 +15,33 @@
 	</head>
 	<body>
 		<div class="container">
-			<h3>Student Directory</h3>
 			<hr>
-			<p class="h4 mb-4">student</p>
-			<form action="/SpringMVCStudentMgntApplication/student/save" method="POST">
+			<center>
+				<h2>GreatLearning Academy</h2>
+			</center>
+			<hr>
+			<h3>Student Details</h3>
+			<hr>
+			<form action="/springmanagementspringmvc_1.0.0/student/save" method="POST">
 				<!-- Add hidden form field to handle update -->
-				<input type="hidden" name="id" value="${student.id}" />
+				<input type="hidden" name="id" value="${addOrUpdateStudent.id}" />
 				
 				<div class="form-inline">
-					<input type="text" name="firstName" value="${student.firstName}" class="form-control mb-4 col-4" placeholder="FristName">
+					<input type="text" name="name" value="${addOrUpdateStudent.name}" class="form-control mb-4 col-4" placeholder="Name">
 				</div>
 	
 				<div class="form-inline">
-					<input type="text" name="lastName" value="${student.lastName}" class="form-control mb-4 col-4" placeholder="LastName">
+					<input type="text" name="department" value="${addOrUpdateStudent.department}" class="form-control mb-4 col-4" placeholder="Department">
 				</div>
 	
 				<div class="form-inline">
-					<input type="text" name="course" value="${student.course}" class="form-control mb-4 col-4" placeholder="Course">
-				</div>
-				
-				<div class="form-inline">
-					<input type="text" name="country" value="${student.country}" class="form-control mb-4 col-4" placeholder="Country">
+					<input type="text" name="country" value="${addOrUpdateStudent.country}" class="form-control mb-4 col-4" placeholder="Country">
 				</div>
 	
 				<button type="submit" class="btn btn-info col-2">Save</button>
 			</form>
 			<hr>
-			<a href="/SpringMVCStudentMgntApplication/student/list">Back to Students List</a>
+			<a href="/springmanagementspringmvc_1.0.0/student/list">Back to Students List</a>
 		</div>
 	</body>
 </html>

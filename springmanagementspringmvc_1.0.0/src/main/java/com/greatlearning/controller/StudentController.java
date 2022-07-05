@@ -8,37 +8,35 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.greatlearning.entity.Student;
 import com.greatlearning.service.StudentService;
 
 @Controller
 @RequestMapping("/student")
-public class StudentRestController {
+public class StudentController {
 
 	@Autowired
-	StudentService studentService;
-
+	private StudentService studentService;
+	
 	@RequestMapping("/list")
 	public String listStudent(Model model) {
 		List<Student> students = studentService.findAll();
-
-		model.addAttribute("students", students);
+		model.addAttribute("Students", students);
 		return "listStudent";
 	}
 
 	@RequestMapping("/showFormForAdd")
 	public String showFormForAdd(Model model) {
 		Student student = new Student();
-		model.addAttribute("student", student);
+		model.addAttribute("addOrUpdateStudent", student);
 		return "addStudent";
 	}
 
 	@RequestMapping("/showFormForUpdate")
 	public String showFormForUpdate(@RequestParam("id") int id, Model model) {
 		Student student = studentService.findById(id);
-		model.addAttribute("student", student);
+		model.addAttribute("addOrUpdateStudent", student);
 		return "addStudent";
 	}
 
